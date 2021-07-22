@@ -1,68 +1,46 @@
-import React from 'react'
-import { AppBar, CssBaseline, Toolbar, Typography, Container, Card, Grid, Button, CardMedia, CardContent } from '@material-ui/core'
-import StoreIcon from '@material-ui/icons/Store'
-import useStyles from './styles'
+import React, { Component } from "react";
+import { Switch, Route, Link } from "react-router-dom";
+import "./App.css";
+import { styles } from "./css-common"
 
-const App = () => {
-    const classes = useStyles();
+import AddToko from "./components/add-toko.component";
+import Toko from "./components/toko.component";
+import TokoList from "./components/toko-list.component";
 
-    return (
-        <div className='app'>
-            <CssBaseline />
-                <AppBar position="relative">
-                    <Toolbar>
-                        <StoreIcon className={classes.icon} />
-                        <Typography variant="h6">
-                            Stand with Dorayaki
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-                <main>
-                    <div className={classes.container}>
-                        <Container maxWidth="sm">
-                            <Typography variant="h3" align="center" color="textPrimary" gutterBottom>
-                                Stand with Dorayaki
-                            </Typography>
-                            <Typography variant="h6" align="center" color="textSecondary" paragraph>
-                                Web application for Dorayaki stock management system
-                            </Typography>
-                            <div>
-                                <Grid container spacing={2} justify="center">
-                                    <Grid item>
-                                        <Button variant="contained" color="primary">
-                                            Add Dorayaki Store
-                                        </Button>
-                                    </Grid>
-                                    <Grid item>
-                                        <Button variant="contained" color="secondary">
-                                            Add Dorayaki Variant
-                                        </Button>
-                                    </Grid>
-                                </Grid>
-                            </div>
-                        </Container>
-                    </div>
-                    <Container className={classes.cardGrid} maxWidth='md'>
-                        <Grid container spacing={4}>
-                            <Grid item>
-                                <Card className={classes.card}>
-                                    <CardMedia 
-                                        className={classes.cardMedia}
-                                        image="https://source.unsplash.com/random"
-                                        title="Image title"
-                                    />
-                                    <CardContent className={classes.cardContent}>
-                                        <Typography variant='h5' gutterBottom>
-                                            tes tes tes
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                        </Grid>
-                    </Container>
-                </main>
+import { AppBar, Toolbar, Typography, withStyles } from '@material-ui/core';
+
+class App extends Component {
+    render(){
+        const { classes } = this.props
+
+        return (
+            <div>
+            <AppBar className={classes.appBar} position="static">
+            <Toolbar>
+                <Typography className={classes.name} variant="h6">
+                Stand with Dorayaki
+                </Typography>
+                <Link to={"/toko"} className={classes.link}>
+                <Typography variant="body2">
+                    Store
+                </Typography>
+                </Link>
+                <Link to={"/add"} className={classes.link}>
+                <Typography variant="body2">
+                    Add new store
+                </Typography>
+                </Link>
+            </Toolbar>
+            </AppBar>
+
+            <Switch>
+                <Route exact path={["/", "/toko"]} component={TokoList} />
+                <Route exact path="/add" component={AddToko} />
+                <Route path="/toko/:id" component={Toko} />
+            </Switch>
         </div>
-    )
+        )
+    }
 }
 
-export default App
+export default withStyles(styles) (App)
