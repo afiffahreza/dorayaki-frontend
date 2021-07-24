@@ -2,7 +2,7 @@ import http from "../http-common";
 
 class TokoDataService {
   getAll() {
-    return http.get("/toko");
+    return http.get("/toko/");
   }
 
   get(id) {
@@ -10,7 +10,7 @@ class TokoDataService {
   }
 
   create(data) {
-    return http.post("/toko", data);
+    return http.post("/toko/", data);
   }
 
   update(id, data) {

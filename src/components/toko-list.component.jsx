@@ -15,7 +15,7 @@ class TokoList extends Component {
     this.searchQuery = this.searchQuery.bind(this);
 
     this.state = {
-      toko: [],
+      tokoAll: [],
       currentToko: null,
       currentIndex: -1,
       searchQuery: ""
@@ -38,9 +38,10 @@ class TokoList extends Component {
     TokoDataService.getAll()
       .then(response => {
         this.setState({
-          toko: response.data
+          tokoAll: response.data.data
         });
         console.log(response.data);
+        //console.log(this.state.tokoAll);
       })
       .catch(e => {
         console.log(e);
@@ -66,7 +67,7 @@ class TokoList extends Component {
     TokoDataService.findByQuery(this.state.searchQuery)
       .then(response => {
         this.setState({
-          toko: response.data
+          tokoAll: response.data
         });
         console.log(response.data);
       })
@@ -77,7 +78,8 @@ class TokoList extends Component {
 
   render() {
     const { classes } = this.props
-    const { searchQuery, toko, currentToko, currentIndex } = this.state;
+    const { searchQuery, currentToko, currentIndex } = this.state;
+    //const { tokoAll } = this.state.tokoAll
 
     return (
       <div className={classes.form}>
@@ -100,8 +102,8 @@ class TokoList extends Component {
             <h2>Store List</h2>
 
             <div className="list-group">
-              {toko &&
-                toko.map((toko, index) => (
+              {this.state.tokoAll &&
+                this.state.tokoAll.map((toko, index) => (
                   <ListItem
                     selected={index === currentIndex}
                     onClick={() => this.setActiveToko(toko, index)}
