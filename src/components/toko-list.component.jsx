@@ -67,7 +67,7 @@ class TokoList extends Component {
     TokoDataService.findByQuery(this.state.searchQuery)
       .then(response => {
         this.setState({
-          tokoAll: response.data
+          tokoAll: response.data.data
         });
         console.log(response.data);
       })
@@ -86,7 +86,7 @@ class TokoList extends Component {
         <Grid container>
           <Grid className={classes.search} item sm={12} xs={12} md={12} xl={12} lg={12}>
             <TextField
-              label="Search by query"
+              label="Search Query"
               value={searchQuery}
               onChange={this.onChangeSearchQuery}
             />
@@ -94,7 +94,7 @@ class TokoList extends Component {
               size="small"
               variant="outlined"
               className={classes.textField}
-              onClick={this.searchTitle}>
+              onClick={this.searchQuery}>
               Search
             </Button>
           </Grid>
@@ -125,6 +125,24 @@ class TokoList extends Component {
                     <strong>Nama:</strong>
                   </label>{" "}
                   {currentToko.nama}
+                </div>
+                <div className={classes.detail}>
+                  <label>
+                    <strong>Jalan:</strong>
+                  </label>{" "}
+                  {currentToko.jalan}
+                </div>
+                <div className={classes.detail}>
+                  <label>
+                    <strong>Kecamatan:</strong>
+                  </label>{" "}
+                  {currentToko.kecamatan}
+                </div>
+                <div className={classes.detail}>
+                  <label>
+                    <strong>Provinsi:</strong>
+                  </label>{" "}
+                  {currentToko.provinsi}
                 </div>
 
                 <Link

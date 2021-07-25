@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import TokoDataService from "../services/toko.service";
 
 import { styles } from "../css-common"
-import { TextField, Button, withStyles } from "@material-ui/core";
+import { TextField, Button, withStyles, Grid } from "@material-ui/core";
 
 class Toko extends Component {
     constructor(props) {
@@ -27,7 +27,7 @@ class Toko extends Component {
         };
     }
 
-    componentDidMount() {
+   componentDidMount() {
         this.getToko(this.props.match.params.id);
     }
 
@@ -87,7 +87,7 @@ class Toko extends Component {
         TokoDataService.get(id)
             .then(response => {
                 this.setState({
-                    currentToko: response.data
+                    currentToko: response.data.data
                 });
                 console.log(response.data);
             })
@@ -124,80 +124,73 @@ class Toko extends Component {
     }
 
     render() {
-        const { currentTokol } = this.state;
+        const { currentToko } = this.state;
         const { classes } = this.props
 
         return (
             <div>
-                {currentToko ? (
-                    <div className={classes.form}>
-                        <h2>Store</h2>
-                        <form>
-                            <div>
-                                <TextField
-                                    className={classes.textField}
-                                    label="Nama"
-                                    name="nama"
-                                    value={currentToko.nama}
-                                    onChange={this.onChangeNama}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <TextField
-                                    className={classes.textField}
-                                    label="Jalan"
-                                    name="jalan"
-                                    value={currentToko.jalan}
-                                    onChange={this.onChangeJalan}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <TextField
-                                    className={classes.textField}
-                                    label="Kecamatan"
-                                    name="Kecamatan"
-                                    value={currentToko.kecamatan}
-                                    onChange={this.onChangeKecamatan}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <TextField
-                                    className={classes.textField}
-                                    label="Provinsi"
-                                    name="provinsi"
-                                    value={currentToko.provinsi}
-                                    onChange={this.onChangeProvinsi}
-                                    required
-                                />
-                            </div>
-                        </form>
-                        <div className={classes.buttonWrapper}>
-                            <Button
-                                className={`${classes.delete} ${classes.button}`}
-                                onClick={this.deleteToko}
-                            >
-                                Delete
-                            </Button>
-
-                            <Button
-                                type="submit"
-                                className={`${classes.update} ${classes.button}`}
-                                onClick={this.updateToko}
-                            >
-                                Update
-                            </Button>
-                        </div>
-                        <p>{this.state.message}</p>
-                    </div>
-                ) : (
+                <div className={classes.form}>
+                    <h2>Edit Store</h2>
+                    <form>
                         <div>
-                            <br />
-                            <p>Please click on a Store...</p>
+                            <TextField
+                                className={classes.textField}
+                                label="Nama"
+                                name="nama"
+                                value={currentToko.nama}
+                                onChange={this.onChangeNama}
+                                required
+                            />
                         </div>
-                    )}
+                        <div>
+                            <TextField
+                                className={classes.textField}
+                                label="Jalan"
+                                name="jalan"
+                                value={currentToko.jalan}
+                                onChange={this.onChangeJalan}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <TextField
+                                className={classes.textField}
+                                label="Kecamatan"
+                                name="Kecamatan"
+                                value={currentToko.kecamatan}
+                                onChange={this.onChangeKecamatan}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <TextField
+                                className={classes.textField}
+                                label="Provinsi"
+                                name="provinsi"
+                                value={currentToko.provinsi}
+                                onChange={this.onChangeProvinsi}
+                                required
+                            />
+                        </div>
+                    </form>
+                    <div className={classes.buttonWrapper}>
+                        <Button
+                            className={`${classes.delete} ${classes.button}`}
+                            onClick={this.deleteToko}
+                        >
+                            Delete
+                        </Button>
+
+                        <Button
+                            type="submit"
+                            className={`${classes.update} ${classes.button}`}
+                            onClick={this.updateToko}
+                        >
+                            Update
+                        </Button>
+                    </div>
+                    <p>{this.state.message}</p>
+                </div>
             </div>
         );
     }

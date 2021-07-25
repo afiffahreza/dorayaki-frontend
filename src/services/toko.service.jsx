@@ -21,8 +21,8 @@ class TokoDataService {
     return http.delete(`/toko/${id}`);
   }
 
-  findByQuery(prov) {
-    return http.get(`/toko?prov=${prov}`);
+  findByQuery(query) {
+    return http.get(`/toko/query?query=${query}`);
   }
 }
 
