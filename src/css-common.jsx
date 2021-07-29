@@ -40,6 +40,26 @@ export const styles = {
         fontWeight: "bold",
         color: "white"
     },
+    stock: {
+        marginLeft: "10px",
+        backgroundColor: "blue",
+        border: "4px solid blue",
+        borderRadius: "5px",
+        textDecoration: "none",
+        fontSize: "13px",
+        fontWeight: "bold",
+        color: "white"
+    },
+    addvariant: {
+        marginLeft: "10px",
+        backgroundColor: "blue",
+        border: "4px solid blue",
+        borderRadius: "5px",
+        textDecoration: "none",
+        fontSize: "13px",
+        fontWeight: "bold",
+        color: "white"
+    },
     publish: {
         backgroundColor: "#0062cc",
         "&:hover": {

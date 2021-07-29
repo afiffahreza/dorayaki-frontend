@@ -151,6 +151,12 @@ class TokoList extends Component {
                 >
                   Edit
                 </Link>
+                <Link
+                  to={"/stock/" + currentToko.id}
+                  className={classes.stock}
+                >
+                  Stock
+                </Link>
               </div>
             ) : (
                 <div>

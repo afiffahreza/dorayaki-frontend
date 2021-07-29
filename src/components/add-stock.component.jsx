@@ -34,8 +34,9 @@ class AddStock extends Component {
 
     componentDidMount() {
         this.getStocks(this.props.match.params.id)
+        var i = parseInt(this.props.match.params.id)
         this.setState({
-            tokoid: this.props.match.params.id
+            tokoid: i
         })
         this.getDorayakis()
     }
@@ -67,8 +68,9 @@ class AddStock extends Component {
     }
 
     onChangeQuantity(e) {
+        var i = parseInt(e.target.value)
         this.setState({
-            quantity: e.target.value
+            quantity: i
         });
     }
 
@@ -106,7 +108,7 @@ class AddStock extends Component {
             dorayakiid: this.state.dorayakiid,
             quantity: this.state.quantity
         }
-
+        console.log(data)
         StockDataService.create(data)
             .then(response => {
                 this.setState({
@@ -124,6 +126,7 @@ class AddStock extends Component {
     }
 
     newStock() {
+        this.componentDidMount()
         this.setState({
             tokoid: 0,
             dorayakiid: 0,
@@ -157,12 +160,14 @@ class AddStock extends Component {
                                     <Select
                                         labelId="select-variant"
                                         id="select-variant"
-                                        value={0}
+                                        value={this.state.dorayakiid}
                                         onChange={this.onChangeVariant}
                                     >
                                         <MenuItem value={0}>None</MenuItem>
-                                        {this.dorayakiArray().forEach(id => {
-                                            <MenuItem key={id} value={id}>{this.getRasaFromID(id)}</MenuItem>
+                                        {this.dorayakiArray().map((id, index) => {
+                                            return(
+                                                <MenuItem key={index} value={id}>{this.getRasaFromID(id)}</MenuItem>
+                                            )
                                         })}
                                     </Select>
                                     <FormHelperText>Add a variant</FormHelperText>

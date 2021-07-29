@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import StockDataService from "../services/stock.service";
 import DorayakiDataService from "../services/dorayaki.service";
+import { Link } from "react-router-dom";
 
 import { styles } from "../css-common"
 import { withStyles, Grid, ListItem } from "@material-ui/core";
@@ -17,12 +18,16 @@ class Stock extends Component {
             stocks: [],
             dorayakis: [],
             currentStock: null,
-            currentIndex: -1
+            currentIndex: -1,
+            currentTokoID: 0
         };
     }
 
     componentDidMount() {
         this.getStocks(this.props.match.params.id)
+        this.setState({
+            currentTokoID: this.props.match.params.id
+        })
         this.getDorayakis()
     }
 
@@ -69,12 +74,17 @@ class Stock extends Component {
 
     render() {
         const { classes } = this.props
-        const { stocks, currentIndex, currentStock } = this.state
-        //console.log(rasa)
+        const { stocks, currentIndex, currentStock, currentTokoID } = this.state
         return (
             <div className={classes.form}>
-                <Grid container>
+                <Grid container>   
                     <Grid item md={4}>
+                        <Link
+                            to={"/addstock/" + currentTokoID}
+                            className={classes.addvariant}
+                        >
+                            Add Variant
+                        </Link>
                         <h2>Inventory</h2>
                         <div className="list-group">
                             {stocks &&

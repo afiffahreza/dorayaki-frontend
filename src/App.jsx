@@ -39,6 +39,11 @@ class App extends Component {
                     Dorayaki
                 </Typography>
                 </Link>
+                <Link to={"/newdorayaki"} className={classes.link}>
+                <Typography variant="body2">
+                    Add new Dorayaki variants
+                </Typography>
+                </Link>
             </Toolbar>
             </AppBar>
 
