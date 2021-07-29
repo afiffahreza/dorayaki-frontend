@@ -5,7 +5,9 @@ import { styles } from "./css-common"
 
 import AddToko from "./components/add-toko.component";
 import AddDorayaki from "./components/add-dorayaki.component";
+import AddStock from "./components/add-stock.component";
 import Toko from "./components/toko.component";
+import Stock from "./components/stock.component";
 import TokoList from "./components/toko-list.component";
 import DorayakiList from "./components/dorayaki-list.component";
 
@@ -46,6 +48,8 @@ class App extends Component {
                 <Route exact path="/dorayaki" component={DorayakiList} />
                 <Route exact path="/newdorayaki" component={AddDorayaki} />
                 <Route path="/toko/:id" component={Toko} />
+                <Route path="/stock/:id" component={Stock} />
+                <Route path="/addstock/:id" component={AddStock} />
             </Switch>
         </div>
         )

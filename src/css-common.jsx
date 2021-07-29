@@ -18,6 +18,10 @@ export const styles = {
     form: {
         marginLeft: "50px"
     },
+    formControl: {
+        margin: "15px 0",
+        minWidth: 120
+    },
     textField: {
         margin: "15px 0"
     },
