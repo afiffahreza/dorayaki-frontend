@@ -110,6 +110,12 @@ class Stock extends Component {
                                     </label>{" "}
                                     {currentStock.quantity}
                                 </div>
+                                <Link
+                                    to={"/updatestock/" + this.state.currentStock.id}
+                                    className={classes.addvariant}
+                                >
+                                    Update Stock
+                                </Link>
                             </div>
                         ) : (
                             <div>

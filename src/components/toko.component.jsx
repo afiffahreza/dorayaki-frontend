@@ -27,7 +27,7 @@ class Toko extends Component {
         };
     }
 
-   componentDidMount() {
+    componentDidMount() {
         this.getToko(this.props.match.params.id);
     }
 

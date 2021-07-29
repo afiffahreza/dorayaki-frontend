@@ -31,6 +31,9 @@ export const styles = {
     detail: {
         margin: "5px 0"
     },
+    delete: {
+        margin: "5px 0"
+    },
     edit: {
         backgroundColor: "orange",
         border: "4px solid orange",

@@ -6,10 +6,12 @@ import { styles } from "./css-common"
 import AddToko from "./components/add-toko.component";
 import AddDorayaki from "./components/add-dorayaki.component";
 import AddStock from "./components/add-stock.component";
+import StockUpdate from "./components/stock-update.component";
 import Toko from "./components/toko.component";
 import Stock from "./components/stock.component";
 import TokoList from "./components/toko-list.component";
 import DorayakiList from "./components/dorayaki-list.component";
+import Deleted from "./components/deleted.component";
 
 import { AppBar, Toolbar, Typography, withStyles } from '@material-ui/core';
 
@@ -52,9 +54,11 @@ class App extends Component {
                 <Route exact path="/add" component={AddToko} />
                 <Route exact path="/dorayaki" component={DorayakiList} />
                 <Route exact path="/newdorayaki" component={AddDorayaki} />
+                <Route exact path="/deleted" component={Deleted} />
                 <Route path="/toko/:id" component={Toko} />
                 <Route path="/stock/:id" component={Stock} />
                 <Route path="/addstock/:id" component={AddStock} />
+                <Route path="/updatestock/:id" component={StockUpdate} />
             </Switch>
         </div>
         )
