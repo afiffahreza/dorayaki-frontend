@@ -117,7 +117,13 @@ class Stock extends Component {
                                     to={"/updatestock/" + this.state.currentStock.id}
                                     className={classes.edit}
                                 >
-                                    Update Stock
+                                    Update
+                                </Link>
+                                <Link
+                                    to={"/movestock/" + this.state.currentStock.id}
+                                    className={classes.stock}
+                                >
+                                    Move
                                 </Link>
                             </div>
                         ) : (

@@ -7,6 +7,7 @@ import AddToko from "./components/add-toko.component";
 import AddDorayaki from "./components/add-dorayaki.component";
 import AddStock from "./components/add-stock.component";
 import StockUpdate from "./components/stock-update.component";
+import MoveStock from "./components/move-stock.component";
 import Toko from "./components/toko.component";
 import Stock from "./components/stock.component";
 import TokoList from "./components/toko-list.component";
@@ -51,6 +52,7 @@ class App extends Component {
                 <Route path="/stock/:id" component={Stock} />
                 <Route path="/addstock/:id" component={AddStock} />
                 <Route path="/updatestock/:id" component={StockUpdate} />
+                <Route path="/movestock/:id" component={MoveStock} />
             </Switch>
         </div>
         )
