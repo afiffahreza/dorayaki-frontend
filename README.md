@@ -6,7 +6,7 @@ You need to allow insecure content in your site settings to get the frontend app
 
 ![allowinsecure](public/img/allowinsecure.jpg)
 
-## How to Run
+## How to Run Locally
 Make sure you have [npm](https://www.npmjs.com/package/node) installed. Run:
 ```bash
 npm run dev
