@@ -10,7 +10,7 @@ class Deleted extends Component {
     render() {
         const { classes } = this.props
         return (
-            <div className={classes.delete}>
+            <div className={classes.deleted}>
                 <h4>Stock successfully deleted!</h4>
             </div>
         );

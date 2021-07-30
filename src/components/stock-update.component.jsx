@@ -37,8 +37,8 @@ class StockUpdate extends Component {
     }
 
     onChangeQuantity(e) {
-        const quantity = parseInt(e.target.value)
-
+        var quantity = 0
+        if (e.target.value!="") quantity = parseInt(e.target.value)
         this.setState(function (prevState) {
             return {
                 currentStock: {
@@ -148,7 +148,7 @@ class StockUpdate extends Component {
         return (
             <div>
                 <div className={classes.form}>
-                    <h2>Update Stock {this.getDorayakiRasa(currentStock.dorayakiid)} on {this.getTokoName(currentStock.tokoid)}</h2>
+                    <h4>Update Stock {this.getDorayakiRasa(currentStock.dorayakiid)} on {this.getTokoName(currentStock.tokoid)}</h4>
                     <form>
                         <div>
                             <TextField

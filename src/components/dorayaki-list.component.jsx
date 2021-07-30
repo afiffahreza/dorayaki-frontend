@@ -89,8 +89,9 @@ class DorayakiList extends Component {
                   </label>{" "}
                   {currentDorayaki.deskripsi}
                 </div>
+                <br/>
                 <div className={classes.detail}>
-                  <img src = {currentDorayaki.gambar}/>
+                  <img src = {currentDorayaki.gambar} class = {classes.image}/>
                 </div>
               </div>
             ) : (

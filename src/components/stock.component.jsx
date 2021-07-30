@@ -79,13 +79,15 @@ class Stock extends Component {
             <div className={classes.form}>
                 <Grid container>   
                     <Grid item md={4}>
+                        <h2>Inventory</h2>
                         <Link
                             to={"/addstock/" + currentTokoID}
                             className={classes.addvariant}
                         >
                             Add Variant
                         </Link>
-                        <h2>Inventory</h2>
+                        <br/>
+                        <br/>
                         <div className="list-group">
                             {stocks &&
                             stocks.map((stock, index) => (
@@ -112,7 +114,7 @@ class Stock extends Component {
                                 </div>
                                 <Link
                                     to={"/updatestock/" + this.state.currentStock.id}
-                                    className={classes.addvariant}
+                                    className={classes.edit}
                                 >
                                     Update Stock
                                 </Link>

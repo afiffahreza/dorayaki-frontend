@@ -12,6 +12,7 @@ import Stock from "./components/stock.component";
 import TokoList from "./components/toko-list.component";
 import DorayakiList from "./components/dorayaki-list.component";
 import Deleted from "./components/deleted.component";
+import StoreIcon from '@material-ui/icons/Store'
 
 import { AppBar, Toolbar, Typography, withStyles } from '@material-ui/core';
 
@@ -23,6 +24,7 @@ class App extends Component {
             <div>
             <AppBar className={classes.appBar} position="static">
             <Toolbar>
+                <StoreIcon className={classes.icon} />
                 <Typography className={classes.name} variant="h6">
                 Stand with Dorayaki
                 </Typography>
@@ -43,7 +45,7 @@ class App extends Component {
                 </Link>
                 <Link to={"/newdorayaki"} className={classes.link}>
                 <Typography variant="body2">
-                    Add new Dorayaki variants
+                    Add dorayaki variant
                 </Typography>
                 </Link>
             </Toolbar>

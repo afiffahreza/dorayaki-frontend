@@ -68,7 +68,8 @@ class AddStock extends Component {
     }
 
     onChangeQuantity(e) {
-        var i = parseInt(e.target.value)
+        var i = 0
+        if (e.target.value!="") i = parseInt(e.target.value)
         this.setState({
             quantity: i
         });

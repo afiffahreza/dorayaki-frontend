@@ -139,9 +139,10 @@ class AddDorayaki extends Component {
                                     hidden
                                     required
                                 />
+                                <br/>
                                 {this.state.imgsubmitted ? (
                                     <Grid>
-                                        <img src = {this.state.gambar}/>
+                                        <img src = {this.state.gambar} class = {classes.image}/>
                                     </Grid>
                                 ) : (
                                     <Grid>

@@ -3,7 +3,7 @@ import TokoDataService from "../services/toko.service";
 import { Link } from "react-router-dom";
 
 import { styles } from "../css-common"
-import { TextField, Button, Grid, ListItem, withStyles } from "@material-ui/core";
+import { TextField, Button, Grid, ListItem, withStyles, FormHelperText } from "@material-ui/core";
 
 class TokoList extends Component {
   constructor(props) {
@@ -97,6 +97,7 @@ class TokoList extends Component {
               onClick={this.searchQuery}>
               Search
             </Button>
+            <FormHelperText>Search with store's name, province, or district</FormHelperText>
           </Grid>
           <Grid item md={4}>
             <h2>Store List</h2>
@@ -144,6 +145,7 @@ class TokoList extends Component {
                   </label>{" "}
                   {currentToko.provinsi}
                 </div>
+                <br/>
 
                 <Link
                   to={"/toko/" + currentToko.id}

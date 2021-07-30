@@ -1,17 +1,18 @@
 export const styles = {
     appBar: {
-        backgroundColor: "#343A40",
+        backgroundColor: "#4372AA",
         height: "50px",
         '& .MuiToolbar-regular': {
             minHeight: "50px"
         }
     },
     name: {
+        color: "#FFFFFF",
         marginRight: "15px"
     },
     link: {
         textTransform: "unset",
-        color: "#a5a5a5",
+        color: "#ffffff",
         margin: "0 20px",
         textDecoration: "unset"
     },
@@ -31,8 +32,9 @@ export const styles = {
     detail: {
         margin: "5px 0"
     },
-    delete: {
-        margin: "5px 0"
+    deleted: {
+        marginTop: "10px",
+        marginLeft: "10px"
     },
     edit: {
         backgroundColor: "orange",
@@ -42,6 +44,11 @@ export const styles = {
         fontSize: "13px",
         fontWeight: "bold",
         color: "white"
+    },
+    image: {
+        border: "1px solid #ddd",
+        padding: "5px",
+        width: "500px"
     },
     stock: {
         marginLeft: "10px",
@@ -54,21 +61,14 @@ export const styles = {
         color: "white"
     },
     addvariant: {
-        marginLeft: "10px",
-        backgroundColor: "blue",
-        border: "4px solid blue",
+        marginLeft: "5px",
+        backgroundColor: "green",
+        border: "4px solid green",
         borderRadius: "5px",
         textDecoration: "none",
         fontSize: "13px",
         fontWeight: "bold",
         color: "white"
-    },
-    publish: {
-        backgroundColor: "#0062cc",
-        "&:hover": {
-            backgroundColor: "#0062cc",
-            opacity: 0.8
-        }
     },
     delete: {
         backgroundColor: "#DD4145",
@@ -87,6 +87,9 @@ export const styles = {
     buttonWrapper: {
         marginTop: "20px"
     },
+    icon: {
+        marginRight: '20px'
+    },
     button: {
         marginRight: "15px",
         color: "white",
@@ -99,5 +102,8 @@ export const styles = {
     },
     toko: {
         marginLeft: "25px"
+    },
+    input: {
+        marginLeft: "20px"
     }
 };
