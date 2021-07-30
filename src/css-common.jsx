@@ -60,7 +60,7 @@ export const styles = {
         fontWeight: "bold",
         color: "white"
     },
-    addvariant: {
+    addcomponent: {
         marginLeft: "5px",
         backgroundColor: "green",
         border: "4px solid green",

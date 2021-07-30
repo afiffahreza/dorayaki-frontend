@@ -79,10 +79,10 @@ class Stock extends Component {
             <div className={classes.form}>
                 <Grid container>   
                     <Grid item md={4}>
-                        <h2>Inventory</h2>
+                        <h3>Stocks</h3>
                         <Link
                             to={"/addstock/" + currentTokoID}
-                            className={classes.addvariant}
+                            className={classes.addcomponent}
                         >
                             Add Variant
                         </Link>
@@ -112,6 +112,7 @@ class Stock extends Component {
                                     </label>{" "}
                                     {currentStock.quantity}
                                 </div>
+                                <br />
                                 <Link
                                     to={"/updatestock/" + this.state.currentStock.id}
                                     className={classes.edit}

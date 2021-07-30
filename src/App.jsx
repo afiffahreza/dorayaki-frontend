@@ -33,19 +33,9 @@ class App extends Component {
                     Store
                 </Typography>
                 </Link>
-                <Link to={"/add"} className={classes.link}>
-                <Typography variant="body2">
-                    Add new store
-                </Typography>
-                </Link>
                 <Link to={"/dorayaki"} className={classes.link}>
                 <Typography variant="body2">
                     Dorayaki
-                </Typography>
-                </Link>
-                <Link to={"/newdorayaki"} className={classes.link}>
-                <Typography variant="body2">
-                    Add dorayaki variant
                 </Typography>
                 </Link>
             </Toolbar>

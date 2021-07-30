@@ -101,6 +101,14 @@ class TokoList extends Component {
           </Grid>
           <Grid item md={4}>
             <h2>Store List</h2>
+            <Link
+                to={"/add"}
+                className={classes.addcomponent}
+            >
+                Add Store
+            </Link>
+            <br/>
+            <br/>
 
             <div className="list-group">
               {this.state.tokoAll &&
@@ -157,7 +165,7 @@ class TokoList extends Component {
                   to={"/stock/" + currentToko.id}
                   className={classes.stock}
                 >
-                  Stock
+                  Stocks
                 </Link>
               </div>
             ) : (

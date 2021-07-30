@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import DorayakiDataService from "../services/dorayaki.service";
-
+import DorayakiDataService from "../services/dorayaki.service"
+import { Link } from "react-router-dom"
 import { styles } from "../css-common"
 import { Grid, ListItem, withStyles } from "@material-ui/core";
 
@@ -59,6 +59,14 @@ class DorayakiList extends Component {
         <Grid container>
           <Grid item md={4}>
             <h2>Dorayaki Variants</h2>
+            <Link
+                to={"/newdorayaki"}
+                className={classes.addcomponent}
+            >
+                Add Dorayaki Variant
+            </Link>
+            <br/>
+            <br/>
             <div className="list-group">
               {dorayakiAll &&
                 dorayakiAll.map((dorayaki, index) => (
