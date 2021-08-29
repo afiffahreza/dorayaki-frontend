@@ -1,8 +1,7 @@
 # dorayaki-frontend
 Welcome to my dorayaki stock management frontend app repository for my programming lab assistant test submission!
 
-Deployment Link: [https://dorayaki-frontend-afif.vercel.app/](https://dorayaki-frontend-afif.vercel.app/)
-Update (8/29/21) backend server turned off.
+Deployment Link: [https://dorayaki-frontend-afif.vercel.app/](https://dorayaki-frontend-afif.vercel.app/) (Update 8/29/21 backend server turned off)
 
 ## How to Run Locally
 Make sure you have [npm](https://www.npmjs.com/package/node) installed. Run:
